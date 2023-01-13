@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "a3d605b2-b08b-4766-bc39-15022bbb3a75",
+		"name": "Vani_Coach_Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6846080"
+	},
+	"item": [
+		{
+			"name": "Creating Vehicle [Sedan]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"car_name\": \"Skoda Octavia\",\r\n    \"car_class\": \"Sedan\", \r\n    \"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/create_vehicle",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"create_vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creating Vehicle [XUV]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"car_name\": \"Maruti Brezza\",\r\n    \"car_class\": \"XUV\", \r\n    \"quantity\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/create_vehicle",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"create_vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creating Vehicle Station",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"station_name\": \"Anand Vihar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/create_vehicle_station",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"create_vehicle_station"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Vehicles to Station",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"station_id\": 10,\r\n    \"car_id\": [1,6,12]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/inventory",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Vehicles List using Station ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"station_id\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/retrieve_vehicles",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"retrieve_vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order for Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"station_id\": 2,\r\n    \"car_id\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/order_vehicle",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order_vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\": 373,\r\n    \"station_id\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/return_vehicle",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"return_vehicle"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MzU2MTYyNywianRpIjoiNDlkODg2YWEtZTFkZi00MjRjLTg5MjctOGU0OGI4MzQzZmU5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Iis5MTcwNDI0MjI0OTkiLCJuYmYiOjE2NzM1NjE2MjcsImV4cCI6MTY3MzU2MjUyN30.zU63vERyGBVW2DLhc-DS8o3xVRTaoRLv-FUdpCrf3ag",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

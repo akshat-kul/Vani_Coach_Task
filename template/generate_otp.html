@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="staticFiles\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href={{url_for("home")}}>Vehicle Rental</a>
+      </div>
+      <ul>
+        <li><a href={{url_for("home")}}>Home</a></li>
+        <li><a href="#">Rent a Vehicle</a></li>
+        <li><a href={{url_for("signup")}}>Signup</a></li>
+        <li><a href={{url_for("login")}}>Login</a></li>
+        <li><a href={{url_for("generate_otp")}}>Generate OTP</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+        <form action="{{url_for("generate_otp")}}" style="border:1px solid #ccc" method = "POST">
+            <div class="container"> <br> <br>
+              <h1>Log In</h1>
+              <p>Please enter the mobile number to initialise the verification of your account.</p>
+              <hr>
+
+              <label for="number"><b>Mobile Number</b></label>
+              <input type="text" placeholder="Enter Your Mobile Number" name="mob_number" required>                             
+              <div class="clearfix">
+                <button type="submit" class="singupbtn">Generate OTP</button>
+              </div>
+            </div>
+        </form>
+  </div>
+</body>
+</html>
